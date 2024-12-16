@@ -22,13 +22,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     height: 64,
-    padding: 16,
+    padding: 24,
     borderBottomWidth: 1,
     borderBottomColor: "black",
   },
   text: {
-    fontSize: 20,
-    fontWeight: "medium",
+    fontSize: 24,
+    fontWeight: "normal",
+    fontFamily: "monospace, sans-serif",
     textAlign: "center",
   },
 });
