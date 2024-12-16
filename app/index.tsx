@@ -1,9 +1,16 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { Text, View, StyleSheet, Pressable } from "react-native";
 
 export default function Index() {
-  return (
+  return (  
     <View style={styles.container}>
-      <Text style={styles.text}>Edit app/index.tsx to edit this screen.</Text>
+      <Pressable onPress={() => console.log('Menu clicked')}>
+        <Ionicons name="menu" size={24} color="black" />
+      </Pressable>
+      <Text style={styles.text}>your time</Text>
+      <Pressable onPress={() => console.log('Plus clicked')}>
+        <Ionicons name="add-outline" size={24} color="black" />
+      </Pressable>
     </View>
   );
 }
@@ -11,12 +18,17 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
+    height: 64,
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
   },
   text: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: "medium",
+    textAlign: "center",
   },
 });
