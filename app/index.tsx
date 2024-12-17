@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Text, View, StyleSheet, Pressable } from "react-native";
+import { Text, View, StyleSheet, Pressable, Button } from "react-native";
 
 export default function Index() {
   return (  
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     height: 64,
-    padding: 24,
+    padding: 0,
     borderBottomWidth: 1,
     borderBottomColor: "black",
   },
@@ -31,5 +31,11 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
     fontFamily: "monospace, sans-serif",
     textAlign: "center",
+  },
+  iconButton: {
+    height: 32,
+    width: 80,
+    color: "black",
+    justifyContent: "center",
   },
 });
