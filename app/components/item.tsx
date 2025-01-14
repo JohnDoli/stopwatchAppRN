@@ -1,5 +1,6 @@
+import { Link } from "expo-router";
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Pressable } from "react-native";
 
 interface TaskProps {
     text: string;
@@ -8,10 +9,14 @@ interface TaskProps {
 const Task: React.FC<TaskProps> = (props) => {
     
     return (
-        <View style={styles.item}>
-            <Text style={styles.itemTime}>{props.text}</Text>
-            <Text style={styles.itemName}>untitled</Text>
-        </View>
+        <Link href="/about" asChild>
+            <TouchableOpacity onPress={() => console.log('Item clicked')}>
+                <View style={styles.item}>
+                    <Text style={styles.itemTime}>{props.text}</Text>
+                    <Text style={styles.itemName}>untitled</Text>
+                </View>
+            </TouchableOpacity>
+        </Link>
     );
 }
 

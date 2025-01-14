@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Text, View, StyleSheet, Pressable, Button } from "react-native";
-import Task from './components/task';
+import Task from './components/item';
+import { Link } from 'expo-router';
 
 export default function Index() {
   return (  
@@ -46,7 +47,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   
-  
   topBar: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -75,5 +75,11 @@ const styles = StyleSheet.create({
     width: 80,
     color: "black",
     justifyContent: "center",
+  },
+
+  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: '#fff',
   },
 });
