@@ -2,18 +2,18 @@ import { Link } from "expo-router";
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Pressable } from "react-native";
 
-interface TaskProps {
+interface TimeItemProps {
     text: string;
 }
 
-const Task: React.FC<TaskProps> = (props) => {
+const TimeItem: React.FC<TimeItemProps> = (props) => {
     
     return (
         <Link href="/about" asChild>
             <TouchableOpacity onPress={() => console.log('Item clicked')}>
                 <View style={styles.item}>
                     <Text style={styles.itemTime}>{props.text}</Text>
-                    <Text style={styles.itemName}>untitled</Text>
+                    <Text style={styles.itemName}>untilted</Text>
                 </View>
             </TouchableOpacity>
         </Link>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Task;
+export default TimeItem;
