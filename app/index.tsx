@@ -1,22 +1,54 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Text, View, StyleSheet, Pressable, Button } from "react-native";
-import Task from './components/task';
+import Task from './components/item';
+import { Stack } from 'expo-router';
+
+// function RightHeaderButton() {
+//   return (
+//     <View style={styles.iconButton}>
+//       <Ionicons name="add-outline" size={24} color="black" />
+//     </View>
+//   );
+// }
+
+// function LeftHeaderButton() {
+//   return (
+//     <View style={styles.iconButton}>
+//       <Ionicons name="menu" size={24} color="black" />
+//     </View>
+//   );
+// }
+
+// function HeaderTitle() {
+//   return (
+//     <Text style={styles.heading}>your time</Text>
+//   );
+// }
+
+function Header() {
+  return (
+    <View style={styles.topBar}>
+      <Pressable onPress={() => console.log('Menu clicked')}>
+        <Ionicons name="menu" size={24} color="black" />
+      </Pressable>
+
+      <Text style={styles.heading}>your time</Text>
+
+      <Pressable onPress={() => console.log('Plus clicked')}>
+        <Ionicons name="add-outline" size={24} color="black" />
+      </Pressable>
+    </View>
+  );
+}
 
 export default function Index() {
   return (  
     <View style={styles.container}>
-
-      <View style={styles.topBar}>
-        <Pressable onPress={() => console.log('Menu clicked')}>
-          <Ionicons name="menu" size={24} color="black" />
-        </Pressable>
-
-        <Text style={styles.heading}>your time</Text>
-
-        <Pressable onPress={() => console.log('Plus clicked')}>
-          <Ionicons name="add-outline" size={24} color="black" />
-        </Pressable>
-      </View>
+      <Stack.Screen
+        options={{
+          header: Header,
+        }}
+      />
 
       <View style={styles.itemsWrapper}>
         <View style={styles.items}>
@@ -46,7 +78,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   
-  
   topBar: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -75,5 +106,12 @@ const styles = StyleSheet.create({
     width: 80,
     color: "black",
     justifyContent: "center",
+    padding: 16,
+  },
+
+  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: '#fff',
   },
 });
