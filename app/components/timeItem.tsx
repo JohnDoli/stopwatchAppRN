@@ -7,7 +7,6 @@ interface TimeItemProps {
 }
 
 const TimeItem: React.FC<TimeItemProps> = (props) => {
-    
     return (
         <Link href="/about" asChild>
             <TouchableOpacity onPress={() => console.log('Item clicked')}>
