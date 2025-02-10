@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Text, View, StyleSheet, Pressable, Button } from "react-native";
+import { Text, View, StyleSheet, Pressable, ScrollView } from "react-native";
 import TimeItem from './components/timeItem';
 import { Stack } from 'expo-router';
 import React, { useState } from 'react';
@@ -10,14 +10,14 @@ interface HeaderProps {
   onAddItem(): void;
 }
 
-function Header({ onAddItem }: HeaderProps) {
+function HeaderIndex({ onAddItem }: HeaderProps) {
   return (
-    <View style={styles.header}>
+    <View style={stylesHeader.header}>
       <Pressable onPress={() => console.log('Menu clicked')}>
         <Ionicons name="airplane" size={24} color="black" />
       </Pressable>
 
-      <Text style={styles.heading}>your time</Text>
+      <Text style={stylesHeader.heading}>your time</Text>
 
       <Pressable onPress={() => {console.log('Plus clicked'); onAddItem();}}>
         <Ionicons name="home" size={24} color="black" />
@@ -38,17 +38,17 @@ export default function Index() {
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          header: () => <Header onAddItem={addItem} />,
+          header: () => <HeaderIndex onAddItem={addItem} />,
         }}
       />
 
-      <View style={styles.itemsWrapper}>
+      <ScrollView style={styles.itemsWrapper}>
         {
           items.map((item, index) => {
             return <TimeItem key={index} text={item.text} />
           })
         }
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -61,12 +61,14 @@ const styles = StyleSheet.create({
   },
   itemsWrapper: {
     paddingTop: 40,
-    paddingHorizontal: 20,
-    backgroundColor: "#fff",
-    maxWidth: "80%",
+    paddingHorizontal: 40,
     alignSelf: "center",
+    width: "100%",
+    maxWidth: 600,
   },
-  
+});
+
+const stylesHeader = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -74,13 +76,7 @@ const styles = StyleSheet.create({
     height: 64,
     padding: 16,
     backgroundColor: "#fff",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 1,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.25)",
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
   },

@@ -8,7 +8,7 @@ interface TimeItemProps {
 
 const TimeItem: React.FC<TimeItemProps> = (props) => {
     return (
-        <Link href="/about" asChild>
+        <Link href="/stopwatchScreen" asChild>
             <TouchableOpacity onPress={() => console.log('Item clicked')}>
                 <View style={styles.item}>
                     <Text style={styles.itemTime}>{props.text}</Text>
@@ -28,21 +28,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: 20,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 1,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     },
     itemName: {
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: "semibold",
         fontFamily: "monospace, sans-serif",
     },
     itemTime: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: "normal",
         fontFamily: "monospace, sans-serif",
     },
