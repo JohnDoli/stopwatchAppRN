@@ -5,7 +5,6 @@ import { Stack } from 'expo-router';
 import React, { useState } from 'react';
 
 
-
 interface HeaderProps {
   onAddItem(): void;
 }
@@ -28,7 +27,10 @@ function HeaderIndex({ onAddItem }: HeaderProps) {
 }
 
 export default function Index() {
+  
   const [items, setItems] = useState([{ text: '00:00:00' }]);
+
+  
 
   const addItem = () => {
     setItems(prevItems => [...prevItems, { text: '00:00:00' }]);

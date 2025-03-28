@@ -1,6 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Link, Stack } from 'expo-router';
-import e from 'express';
 import { useState } from 'react';
 import { Text, View, StyleSheet, Pressable, Button } from 'react-native';
 
